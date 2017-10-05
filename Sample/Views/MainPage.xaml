@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ef="clr-namespace:Sample;assembly=Sample"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+    prism:ViewModelLocator.AutowireViewModel="True" 
+    x:Class="Sample.Views.MainPage" Title="MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="9" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="25" Android="34" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="#95C25A" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout> 
+        <Label  AutomationId="ResultText" Text="{Binding CommandParameterText.Value}" MinimumHeightRequest="30" HeightRequest="30" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+
+        <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <ActivityIndicator AutomationId="ActivityIndicator" IsVisible="true" IsRunning="true" 
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ActivityIndicator"/> 
+                
+            <BoxView Color="Green"  AutomationId="BoxView"
+                ef:Ef.On="{Binding EffectOn.Value}"
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="BoxView" 
+                /> 
+                 
+            <Button Text="Button"  AutomationId="Button"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Button" 
+                /> 
+
+            <DatePicker  AutomationId="DatePicker"
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="DatePicker"
+                /> 
+
+            <Editor  Text="Editor" AutomationId="Editor"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Editor"
+                /> 
+
+            <Entry Text="Entry"  AutomationId="Entry"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Entry" 
+                /> 
+
+            <Image Source="sample" HeightRequest="30"  AutomationId="Image"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Image" 
+                /> 
+                
+            <Label Text="Label" AutomationId="Label"
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Label"
+                /> 
+
+            <ListView HeightRequest="20" BackgroundColor="Green" AutomationId="ListView"
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ListView"
+                /> 
+
+            <Picker Title="Picker"  AutomationId="Picker"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Picker" 
+                /> 
+
+            <ProgressBar Progress="0.5" AutomationId="ProgressBar"
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ProgressBar"
+                /> 
+
+            <SearchBar AutomationId="SearchBar" HeightRequest="25"
+                ef:Ef.On="{Binding EffectOn.Value}" 
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="SearchBar"
+                 /> 
+
+            <Slider  AutomationId="Slider"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Slider"
+                /> 
+                
+            <Stepper AutomationId="Stepper"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Stepper"
+                /> 
+
+            <Switch AutomationId="Switch"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Switch" 
+                /> 
+
+            <TableView HeightRequest="20" BackgroundColor="Green" AutomationId="TableView"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="TableView" 
+                /> 
+
+            <TimePicker  AutomationId="TimePicker"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="TimePicker"
+                /> 
+
+            <WebView Source="https://www.google.co.jp/" HeightRequest="60" BackgroundColor="Green" AutomationId="WebView"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="WebView"
+                /> 
+                 
+            <ContentPresenter HeightRequest="20" BackgroundColor="Blue" AutomationId="ContentPresenter"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ContentPresenter" 
+                /> 
+
+            <ContentView HeightRequest="20" BackgroundColor="Navy" AutomationId="ContentView"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ContentView" 
+                /> 
+
+            <Frame  AutomationId="Frame"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Frame" 
+                /> 
+
+            <ScrollView HeightRequest="20" BackgroundColor="Green" AutomationId="ScrollView"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="ScrollView" 
+                /> 
+
+            <TemplatedView HeightRequest="20" BackgroundColor="Blue" AutomationId="TemplatedView"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="TemplatedView" 
+                /> 
+
+            <AbsoluteLayout HeightRequest="20" BackgroundColor="Fuchsia" AutomationId="AbsoluteLayout"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="AbsoluteLayout"
+                /> 
+
+            <Grid HeightRequest="20" BackgroundColor="Maroon" AutomationId="Grid"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="Grid" 
+                /> 
+
+            <RelativeLayout HeightRequest="20" BackgroundColor="Olive" AutomationId="RelativeLayout"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="RelativeLayout" 
+                /> 
+
+            <StackLayout Orientation="Horizontal" AutomationId="StackLayout"
+                ef:Ef.On="{Binding EffectOn.Value}"  
+                ef:Ef.Command="{Binding EffectCommand}"
+                ef:Ef.CommandParameter="StackLayout"
+               
+                > 
+                <Label Text="StackLayout" InputTransparent="true" />
+                <Image Source="sample" InputTransparent="false" />
+                    
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+</StackLayout>
+</ContentPage>
